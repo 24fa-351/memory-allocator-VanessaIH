@@ -1,7 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -gcc
 OBJ = allocator.o tester.o
-LIB = -pthread
 
 all: tester
 
@@ -10,9 +9,6 @@ tester: $(OBJ)
 
 allocator.o: allocator.c allocator.h
 	$(CC) $(CFLAGS) -c allocator.c
-
-tester.o: tester.c allocator.h
-	$(CC) $(CFLAGS) -c tester.CC
 
 clean:
 	rm -f *.o tester

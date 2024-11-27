@@ -10,5 +10,8 @@ tester: $(OBJ)
 allocator.o: allocator.c allocator.h
 	$(CC) $(CFLAGS) -c allocator.c
 
+tester.o: tester.c allocator.h
+	$(CC) $(CFLAGS) -c tester.c
+
 clean:
-	rm -f *.o tester
+	rm -f

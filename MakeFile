@@ -1,0 +1,17 @@
+CC = gcc
+CFLAGS = -Wall -g
+OBJ = allocator.o tester.o
+
+all: tester
+
+tester: allocator.o tester.o
+	$(CC) $(CFLAGS) -o tester allocator.o tester.o
+
+allocator.o: allocator.c allocator.h
+	$(CC) $(CFLAGS) -c allocator.c
+
+tester.o: tester.c allocator.h
+	$(CC) $(CFLAGS) -c tester.c
+
+clean:
+	rm -f *.o tester
